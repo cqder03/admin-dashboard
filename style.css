@@ -14,7 +14,6 @@
 .sidebar {
     grid-column: 1 / 3;
     grid-row: 1 / 6;
-    border: 2px solid red;
     padding: 1rem 0 0 1rem;
 }
 
@@ -65,7 +64,6 @@
     grid-row: 1 / 2;
     display: grid;
     grid-template-rows: repeat(2, 1fr);
-    border: 2px solid pink;
     padding-left: 3rem;
 }
 
@@ -101,6 +99,7 @@
     border-radius: 1rem;
     border-color: transparent;
     background-color: lightskyblue;
+    text-indent: 0.5rem;
 }
 
 .profile-picture {
@@ -122,6 +121,10 @@
     gap: 1.5rem;
 }
 
+.header-lower-left {
+    grid-column:1 / 10;
+}
+
 .text-holder-upper {
     font-size: 1rem;
     font-weight: bold;
@@ -132,9 +135,99 @@
     font-weight: bold;
 }
 
+.header-button {
+    background-color: lightskyblue;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    border-color: transparent;
+    font-size: 1rem;
+}
+
 .main {
     grid-column: 3 / 13;
     grid-row: 2 / 6;
-    display: inline-grid;
-    border: 2px solid blue;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    padding-top: 2rem;
+}
+
+.main-subtitles {
+    font-size: 1.5rem;
+    padding: 0.5rem 0 0.5rem 1rem;
+}
+
+.main-left {
+    grid-column: 1 / 7;
+    padding: 0 1rem 0 1rem;
+}
+
+.card-holder {
+    height: 90%;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.card {
+    border-radius: 9px;
+    border-left: 8px solid rgb(197, 197, 116);
+    background-color: rgb(80, 10, 10);
+    padding: 2rem 1.5rem 2rem 1.5rem;
+    display: grid;
+    align-content: space-between;
+}
+
+.card-buttons {
+    justify-self: flex-end;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1rem;
+}
+
+.card-button {
+    background-color: transparent;
+    border: none;
+}
+
+.card-icon {
+    height: 32px;
+}
+
+.main-right {
+    grid-column: 7 / 9;
+}
+
+.announcement-container {
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    border-radius: 10px;
+    margin-right: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.announcement-subcontainer {
+    padding: 0.8rem 0;
+}
+
+.announcement-subtitle {
+    font-size: 16px;
+}
+
+.announcement-text {
+    font-size: 14px;
+}
+
+.trending-container {
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    border-radius: 10px;
+    margin-right: 2rem;
+}
+
+.trending-subcontainer {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding-bottom: 1rem;
 }
