@@ -1,7 +1,31 @@
+@font-face {
+    font-family: 'rubiklight';
+    src: url('assets/fonts/Rubik/rubik-variablefont_wght-webfont.woff2') format('woff2'),
+         url('assets/fonts/Rubik/rubik-variablefont_wght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'rubiklight_italic';
+    src: url('assets/fonts/Rubik/rubik-italic-variablefont_wght-webfont.woff2') format('woff2'),
+         url('assets/fonts/Rubik/rubik-italic-variablefont_wght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.light {
+    --background-primary: #ffffff;
+    --background-secondary: #e1e8f0;
+    --primary-accent-color: #1892d3;
+    --secondary-accent-color: #496677;
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'rubiklight';
 }
 
 .content-wrapper {
@@ -15,6 +39,7 @@
     grid-column: 1 / 3;
     grid-row: 1 / 6;
     padding: 1rem 0 0 1rem;
+    background-color: var(--primary-accent-color);
 }
 
 .sidebar > .sidebar-icon {
@@ -47,12 +72,21 @@
     align-items: center;
 }
 
+.sidebar-upper .sidebar-icon:hover,
+.sidebar-lower .sidebar-icon:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--background-primary);
+    text-underline-offset: 5px;
+}
+
 .sidebar-icon:not(.sidebar > .sidebar-icon) {
     padding-left: 0.5rem;
 }
 
 .sidebar-icon + .sidebar-icon {
-    padding-top: 1.2rem;
+    margin-top: 0.8rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
 }
 
 .sidebar-lower {
@@ -65,6 +99,7 @@
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     padding-left: 3rem;
+    background-color: var(--background-primary);
 }
 
 .header-upper {
@@ -72,6 +107,14 @@
     display: grid;
     grid-auto-flow: column;
     align-items: center;
+}
+
+.upper-profile-name {
+    font-weight: bold;
+}
+
+.header-upper-left .img {
+    height: 24px;
 }
 
 .header-upper-left, .header-upper-right,
@@ -92,13 +135,17 @@
     height: 24px;
 }
 
+.sidebar img {
+    padding-right: 1rem;
+}
+
 #search {
     margin-left: 2rem;
     height: 2rem;
     width: 65rem;
     border-radius: 1rem;
     border-color: transparent;
-    background-color: lightskyblue;
+    background-color: var(--background-secondary);
     text-indent: 0.5rem;
 }
 
@@ -136,11 +183,17 @@
 }
 
 .header-button {
-    background-color: lightskyblue;
+    background-color: var(--primary-accent-color);
     padding: 0.5rem 1rem;
-    border-radius: 1rem;
+    border-radius: 1.2rem;
     border-color: transparent;
     font-size: 1rem;
+    color: var(--background-primary);
+    font-weight: bold;
+}
+
+.header-button:active, .card-button:active {
+    transform: scale(0.9);
 }
 
 .main {
@@ -148,11 +201,12 @@
     grid-row: 2 / 6;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    padding-top: 2rem;
+    padding-top: 1.5rem;
+    background-color: var(--background-secondary);
 }
 
 .main-subtitles {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding: 0.5rem 0 0.5rem 1rem;
 }
 
@@ -171,11 +225,16 @@
 
 .card {
     border-radius: 9px;
-    border-left: 8px solid rgb(197, 197, 116);
-    background-color: rgb(80, 10, 10);
+    border-left: 8px solid var(--secondary-accent-color);
+    background-color: var(--background-primary);
     padding: 2rem 1.5rem 2rem 1.5rem;
     display: grid;
     align-content: space-between;
+}
+
+.card:hover {
+    border: none;
+    outline: 2px solid var(--secondary-accent-color);
 }
 
 .card-buttons {
@@ -198,11 +257,19 @@
     grid-column: 7 / 9;
 }
 
+hr {
+    background-color: var(--background-secondary);
+    height: 1px;
+    border: none;
+
+}
+
 .announcement-container {
     padding: 0.5rem 1.5rem 0.5rem 1.5rem;
     border-radius: 10px;
     margin-right: 2rem;
     margin-bottom: 1.5rem;
+    background-color: var(--background-primary)
 }
 
 .announcement-subcontainer {
@@ -210,17 +277,18 @@
 }
 
 .announcement-subtitle {
-    font-size: 16px;
+    font-size: 0.9rem;
 }
 
 .announcement-text {
-    font-size: 14px;
+    font-size: 0.8rem;
 }
 
 .trending-container {
-    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    padding: 1rem 1.5rem 0.5rem 1.5rem;
     border-radius: 10px;
     margin-right: 2rem;
+    background-color: var(--background-primary);
 }
 
 .trending-subcontainer {
@@ -230,4 +298,16 @@
     justify-content: flex-start;
     gap: 1rem;
     padding-bottom: 1rem;
+}
+
+.trending-subcontainer:last-of-type {
+    padding-bottom: 0;
+}
+
+.profile-name {
+    font-size: 0.9rem;
+}
+
+.profile-description {
+    font-size: 1rem;
 }
